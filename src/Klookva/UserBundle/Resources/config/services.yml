@@ -1,0 +1,9 @@
+parameters:
+#    klookva_user.example.class: Klookva\UserBundle\Example
+
+services:
+    klookva_user.registration.form.type:
+        class: Klookva\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: klookva_user_registration }

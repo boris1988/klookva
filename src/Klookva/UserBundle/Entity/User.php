@@ -165,5 +165,16 @@ class User extends BaseUser
         parent::__construct();
         $this->groups = new \Doctrine\Common\Collections\ArrayCollection();  
 
-    }       
+    } 
+
+    public function setGroups($groups){
+        $this->getGroups()->clear();
+
+        foreach($groups as $group) {
+            $this->addGroup($group);
+        }
+
+        return $this;        
+    } 
+        
 }

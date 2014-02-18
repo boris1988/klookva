@@ -11,27 +11,15 @@ security:
             id: fos_user.user_provider.username
 
     firewalls:
-        main:
-            pattern: ^/
-            form_login:
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
-            logout:       true
-            anonymous:    true
-
-        login:
-            pattern:  ^/login$
-            security: false
-
         secured_area:
             pattern:    ^/
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
+                check_path: /logn_check
+                login_path: /login
             logout:
-                path:   _demo_logout
-                target: _demo
-            #anonymous: ~
+                path:   /logout
+                target: /
+            anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 

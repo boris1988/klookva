@@ -73,4 +73,27 @@ fos_user:
         form:
             type: klookva_user_registration
     group:
-          group_class: Klookva\UserBundle\Entity\KlGroup             
+          group_class: Klookva\UserBundle\Entity\KlGroup
+
+knp_gaufrette:
+    stream_wrapper: ~
+
+    adapters:
+        user_adapter:
+            local:
+                directory: %kernel.root_dir%/../web/images/users
+                create:     true
+
+    filesystems:
+        user_image_fs:
+            adapter:    user_adapter
+
+vich_uploader:
+    db_driver: orm
+    gaufrette: true
+    storage:   vich_uploader.storage.gaufrette
+    mappings:
+        user_image:
+            uri_prefix:         /images/users
+            upload_destination: users_image_fs
+            namer:              vich_uploader.namer_uniqid          

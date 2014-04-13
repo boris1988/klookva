@@ -95,5 +95,5 @@ vich_uploader:
     mappings:
         user_image:
             uri_prefix:         /images/users
-            upload_destination: users_image_fs
+            upload_destination: user_image_fs
             namer:              vich_uploader.namer_uniqid          

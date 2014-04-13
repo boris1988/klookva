@@ -15,7 +15,7 @@ class RegistrationFormType extends BaseType
         $builder->add('name');
         $builder->add('surname');
         $builder->add('phone');
-        $builder->add('photo');
+        $builder->add('photo','file');
         $builder->add('groups', 'entity', array(
             'class' => 'KlookvaUserBundle:KlGroup',
             'property' => 'name',

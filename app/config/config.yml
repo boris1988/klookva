@@ -81,7 +81,7 @@ knp_gaufrette:
     adapters:
         user_adapter:
             local:
-                directory: %kernel.root_dir%/../web/images/users
+                directory: %kernel.root_dir%/../web/bundles/klookvauserbundle/images/users
                 create:     true
 
     filesystems:
@@ -90,10 +90,13 @@ knp_gaufrette:
 
 vich_uploader:
     db_driver: orm
+    twig: true
     gaufrette: true
     storage:   vich_uploader.storage.gaufrette
     mappings:
         user_image:
-            uri_prefix:         /images/users
+            uri_prefix:         web
             upload_destination: user_image_fs
+            delete_on_remove:   true
+            inject_on_load:     false
             namer:              vich_uploader.namer_uniqid          

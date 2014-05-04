@@ -47,7 +47,7 @@ class RegistrationController extends BaseController
                 $userManager->updateUser($user);
 
                 if (null === $response = $event->getResponse()) {
-                    $url = $this->container->get('router')->generate('fos_user_registration_confirmed');
+                    $url = $this->container->get('router')->generate('fos_user_register');
                     $response = new RedirectResponse($url);
                 }
 

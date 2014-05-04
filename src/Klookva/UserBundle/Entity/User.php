@@ -153,29 +153,6 @@ class User extends BaseUser
     }
 
     /**
-     * Set photo
-     *
-     * @param string $photo
-     * @return User
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-    
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string 
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
-
-/**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
      * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
@@ -198,21 +175,22 @@ class User extends BaseUser
     }
 
     /**
-     * @param string $imageName
+     * @param string $photo
      */
-    public function setImageName($imageName)
+    public function setPhoto($photo)
     {
-        $this->imageName = $imageName;
+        $this->photo = $photo;
+    
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getImageName()
+    public function getPhoto()
     {
-        return $this->imageName;
-    }    
-    
+        return $this->photo;
+    }
     public function __construct()
     {
         parent::__construct();
